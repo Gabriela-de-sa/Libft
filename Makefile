@@ -16,9 +16,10 @@ FILE = \
 	ft_tolower.c\
 	ft_toupper.c\
 	ft_memcpy.c\
-
-HEADER = \
-	libft.h\
+	ft_memchr.c\
+	ft_memcmp.c\
+	ft_memmove.c\
+	ft_strnstr.c\
 
 OBJECTS = $(FILE:%.c=%.o)
 

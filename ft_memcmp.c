@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/25 12:44:33 by gde-sa            #+#    #+#             */
-/*   Updated: 2023/07/29 22:10:38 by gabriela         ###   ########.fr       */
+/*   Created: 2023/07/30 13:00:09 by gabriela          #+#    #+#             */
+/*   Updated: 2023/07/30 14:48:43 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
+	unsigned char	*ptr1;
+	unsigned char	*ptr2;
 	size_t			i;
-	unsigned char	*ptr;
 
 	i = 0;
-	ptr = (unsigned char *)s;
+	ptr1 = (unsigned char *)s1;
+	ptr2 = (unsigned char *)s2;
 	while (i < n)
 	{
-		*ptr = (unsigned char)c;
+		if (ptr1[i] != ptr2[i])
+			return (ptr1[i] - ptr2[i]);
 		i++;
-		ptr++;
 	}
-	return (s);
+	return (0);
 }
 
 /*
-coloca o caracter c no comeco da string determinado pelo valor dado a n
-uso do unsigned char é para ter mais consistencia no uso de memoria
+trocar header
+
+https://cplusplus.com/reference/cstring/memcmp/
 */
