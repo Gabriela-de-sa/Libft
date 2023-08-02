@@ -20,6 +20,8 @@ FILE = \
 	ft_memcmp.c\
 	ft_memmove.c\
 	ft_strnstr.c\
+	ft_strlcpy.c\
+	ft_strlcat.c\
 
 OBJECTS = $(FILE:%.c=%.o)
 
