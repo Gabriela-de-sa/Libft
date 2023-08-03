@@ -6,7 +6,7 @@
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 03:11:48 by gabriela          #+#    #+#             */
-/*   Updated: 2023/08/01 22:08:51 by gabriela         ###   ########.fr       */
+/*   Updated: 2023/08/02 17:03:05 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,34 +22,31 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	len_dst = ft_strlen(dst);
 	if (size == 0)
 		return (len_src);
-	if (len_dst < size)
+	if (size > len_dst)
 		len_dst += len_src;
-
-	while (j < size)
-	{
-		((unsigned char *)dst)[i] = ((unsigned char *)src)[j];
-		j++;
-		i++;
-	}
-	dst[i] = '\0';
-	return (ft_strlen(dst));
+	else
+		len_dst = len_src + size;
+	return (len_dst);
 }
-
 
 /*#include <stdio.h>
 
 int	main(void)
 {
-	const char	src[20] = "banana milk";
-	char	dest[20] = "gabriela de sa";
+	const char	src[20] = "ba  ";
+	char	dest[20] = "gabri              ";
 
 	printf("%li", strlcat(dest, src, 8));
 }*/
 
 /*
-retorna o dst se for concatenada
-retorna o src caso o size for 0
+se nao houver espaco suficiente no buffer para o size ir no dest
+a string é truncada
 
+em dest tem que ser terminada em '\0'
 
+valor retornado é o comprimento total das strings de origem e destino
+
+a string de dest tem que ter o tamanho suficiente para receber o size
 
 */

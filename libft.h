@@ -6,7 +6,7 @@
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 14:00:20 by gde-sa            #+#    #+#             */
-/*   Updated: 2023/08/01 03:11:25 by gabriela         ###   ########.fr       */
+/*   Updated: 2023/08/02 16:12:54 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,6 @@ void			*ft_memmove(void *dest, const void *src, size_t n);
 char			*ft_strnstr(const char *big, const char *little, size_t len);
 size_t			ft_strlcpy(char *dst, const char *src, size_t size);
 size_t			ft_strlcat(char *dst, const char *src, size_t size);
+int				ft_atoi(const char *nptr);
 
 #endif

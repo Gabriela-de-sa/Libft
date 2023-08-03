@@ -22,6 +22,7 @@ FILE = \
 	ft_strnstr.c\
 	ft_strlcpy.c\
 	ft_strlcat.c\
+	ft_atoi.c\
 
 OBJECTS = $(FILE:%.c=%.o)
 
