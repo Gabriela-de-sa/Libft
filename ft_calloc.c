@@ -1,36 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gde-sa <gde-sa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/03 12:21:08 by gde-sa            #+#    #+#             */
-/*   Updated: 2023/08/03 12:21:12 by gde-sa           ###   ########.fr       */
+/*   Created: 2023/08/03 15:38:58 by gde-sa            #+#    #+#             */
+/*   Updated: 2023/08/03 17:30:45 by gde-sa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	size_t			i;
-	unsigned char	*ptr;
+	char	*ptr;
 
-	ptr = (unsigned char *)s;
-	i = 0;
-	while (i < n)
-	{
-		if (ptr[i] == (unsigned char)c)
-			return ((char *)s + i);
-		i++;
-	}
-	return (NULL);
+	if (nmemb == 0 || size == 0)
+		return (malloc(0));
+	ptr = malloc(nmemb * size);
+	if (ptr == NULL)
+		return (NULL);
+	ft_bzero(ptr, nmemb * size);
+	return ((int *)ptr);
 }
-
-// TROCAR HEADER DA 42
-
-/*
-procura a primeira ocorrência do caractere c (um unsigned char)
- nos primeiros n bytes da string apontada pelo argumento str .
-*/

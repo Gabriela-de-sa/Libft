@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gde-sa <gde-sa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/03 12:21:08 by gde-sa            #+#    #+#             */
-/*   Updated: 2023/08/03 12:21:12 by gde-sa           ###   ########.fr       */
+/*   Created: 2023/08/03 12:34:19 by gde-sa            #+#    #+#             */
+/*   Updated: 2023/08/03 16:37:15 by gde-sa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+char	*ft_strdup(const char *s)
 {
-	size_t			i;
-	unsigned char	*ptr;
+	char	*ptr;
+	int		i;
 
-	ptr = (unsigned char *)s;
+	ptr = malloc (ft_strlen(s) + 1 * sizeof(char));
+	if (ptr == NULL)
+		return (NULL);
 	i = 0;
-	while (i < n)
+	while (s[i])
 	{
-		if (ptr[i] == (unsigned char)c)
-			return ((char *)s + i);
+		ptr[i] = s[i];
 		i++;
 	}
-	return (NULL);
+	ptr[i] = '\0';
+	return (ptr);
 }
-
-// TROCAR HEADER DA 42
-
-/*
-procura a primeira ocorrência do caractere c (um unsigned char)
- nos primeiros n bytes da string apontada pelo argumento str .
-*/
