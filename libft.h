@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gde-sa <gde-sa@student.42.fr>              +#+  +:+       +#+        */
+/*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 14:00:20 by gde-sa            #+#    #+#             */
-/*   Updated: 2023/08/03 17:34:37 by gde-sa           ###   ########.fr       */
+/*   Updated: 2023/08/06 20:53:06 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,8 @@ int				ft_atoi(const char *nptr);
 char			*ft_strdup(const char *s);
 void			*ft_calloc(size_t nmemb, size_t size);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
+char			*ft_strjoin(char const *s1, char const *s2);
+char			*ft_strtrim(char const *s1, char const *set);
+char			**ft_split(char const *s, char c);
 
 #endif

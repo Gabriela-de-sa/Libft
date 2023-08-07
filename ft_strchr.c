@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gde-sa <gde-sa@student.42.fr>              +#+  +:+       +#+        */
+/*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 12:32:07 by gde-sa            #+#    #+#             */
-/*   Updated: 2023/07/28 15:01:28 by gde-sa           ###   ########.fr       */
+/*   Updated: 2023/08/06 18:04:48 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,7 @@ char	*ft_strchr(const char *s, int c)
 	while (*s)
 	{
 		if (*s == (char)c)
-		{
 			return ((char *)s);
-		}
 		s++;
 	}
 	if ((char)c == '\0')

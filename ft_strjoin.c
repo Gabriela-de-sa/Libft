@@ -1,36 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/03 12:34:19 by gde-sa            #+#    #+#             */
-/*   Updated: 2023/08/04 22:26:16 by gabriela         ###   ########.fr       */
+/*   Created: 2023/08/05 13:51:00 by gabriela          #+#    #+#             */
+/*   Updated: 2023/08/05 14:14:50 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*ptr;
+	char	*new_string;
 	int		i;
+	int		len_s1;
+	int		len_s2;
 
-	ptr = malloc (ft_strlen(s) + 1 * sizeof(char));
-	if (ptr == NULL)
+	len_s1 = ft_strlen(s1);
+	len_s2 = ft_strlen(s2);
+	if (s1 == 0 && s2 == 0)
+		return (ft_strdup(""));
+	new_string = (char *) malloc(len_s1 + len_s2 + 1);
+	if (new_string == NULL)
 		return (NULL);
-	i = 0;
-	while (s[i])
-	{
-		ptr[i] = s[i];
-		i++;
-	}
-	ptr[i] = '\0';
-	return (ptr);
+	i = -1;
+	while (s1[++i])
+		new_string[i] = s1[i];
+	i = -1;
+	while (s2[++i])
+		new_string[i + len_s1] = s2[i];
+	new_string[i + len_s1] = '\0';
+	return (new_string);
 }
-
-/*
-strdup aloca um espaco na memoria a partir da string
-a duplicata ocorre da string inteira
-*/

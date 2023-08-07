@@ -1,36 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/03 12:34:19 by gde-sa            #+#    #+#             */
-/*   Updated: 2023/08/04 22:26:16 by gabriela         ###   ########.fr       */
+/*   Created: 2023/08/06 20:52:19 by gabriela          #+#    #+#             */
+/*   Updated: 2023/08/06 20:56:28 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+char	**ft_split(char const *s, char c)
 {
-	char	*ptr;
-	int		i;
-
-	ptr = malloc (ft_strlen(s) + 1 * sizeof(char));
-	if (ptr == NULL)
-		return (NULL);
-	i = 0;
-	while (s[i])
-	{
-		ptr[i] = s[i];
-		i++;
-	}
-	ptr[i] = '\0';
-	return (ptr);
+	
 }
 
 /*
-strdup aloca um espaco na memoria a partir da string
-a duplicata ocorre da string inteira
+posso usar o strchr para detectar o caracter que vai ser determinado para o split
+
+malloc vai ser o dobro da string
+
+
 */
