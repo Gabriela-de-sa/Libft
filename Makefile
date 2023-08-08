@@ -31,6 +31,7 @@ FILE = \
 	ft_split.c\
 	ft_strmapi.c\
 	ft_striteri.c\
+	ft_putchar_fd.c\
 
 OBJECTS = $(FILE:%.c=%.o)
 
