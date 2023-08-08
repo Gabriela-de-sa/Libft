@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gde-sa <gde-sa@student.42.fr>              +#+  +:+       +#+        */
+/*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 12:20:41 by gde-sa            #+#    #+#             */
-/*   Updated: 2023/08/03 12:24:39 by gde-sa           ###   ########.fr       */
+/*   Updated: 2023/08/08 11:16:02 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,6 @@ int	ft_atoi(const char *nptr)
 	}
 	return (sign * result);
 }
-
-/*#include <stdio.h>
-int	main(void)
-{
-	char c[] = "546:5";
-
-	printf("%i", ft_atoi(c));
-}*/
 
 /*
 converte uma string em um numero inteiro

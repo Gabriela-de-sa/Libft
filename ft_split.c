@@ -3,25 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gde-sa <gde-sa@student.42.fr>              +#+  +:+       +#+        */
+/*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 11:54:38 by gde-sa            #+#    #+#             */
-/*   Updated: 2023/08/07 18:04:21 by gde-sa           ###   ########.fr       */
+/*   Updated: 2023/08/08 17:58:36 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 int	count_words(char const *s, char c)
 {
 	int	count;
 	int	i;
 
+	count = 0;
+	if (*s == '\0')
+		return (count);
+	if (c == '\0')
+		return (1);
 	i = 0;
 	while (s[i] && s[i] == c)
-			i++;
-	count = 0;
+		i++;
 	while (s[i])
 	{
 		if (s[i] == c)
@@ -38,39 +41,54 @@ int	count_words(char const *s, char c)
 	return (count + 1);
 }
 
-char	string_split(char *s, int start, char *split, int len)
+void	*rollback(char **morsels)
 {
-	split = malloc(len + 1);
-	split = ft_strlcpy(split, &s[start], len);
-	return (split);
-}
-
-// colocar as palavras dentro do split
-char	*put_split(char *s, char c, char *split)
-{
-	int		i;
-	int		index;
-	int		start;
-	int		len;
+	int	i;
 
 	i = -1;
+	while (morsels[++i])
+		free(morsels[i]);
+	free(morsels);
+	return (NULL);
+}
+
+char	*string_split(char const *s, int start, int len, char **split)
+{
+	char	*current_word;
+	int		index;
+
+	current_word = malloc((len + 1) * sizeof(char));
+	if (current_word == NULL)
+		return (rollback(split));
 	index = -1;
-	while (split[++i])
+	while (index < len)
+		current_word[++index] = s[start++];
+	current_word[index] = '\0';
+	return (current_word);
+}
+
+char	**put_word(char const *s, char c, char **split)
+{
+	int		i;
+	int		start;
+	int		len;
+	int		split_index;
+
+	i = -1;
+	split_index = -1;
+	while (s[++i])
 	{
-		while (s[++index])
+		if (s[i] != c)
 		{
-			if (s[index] != c)
-			{
-				start = index;
-				len = 0;
-				while (s[index + len] != c)
-					len++;
-			}
-			if (len > 0)
-				string_split(s, start, &split[i], len);
+			start = i;
+			len = 0;
+			i = i - 1;
+			while (s[++i] && s[i] != c)
+				len++;
+			split[++split_index] = string_split(s, start, len, split);
 		}
 	}
-	split[i] = NULL;
+	split[split_index + 1] = NULL;
 	return (split);
 }
 
@@ -80,20 +98,36 @@ char	**ft_split(char const *s, char c)
 	char	**split;
 
 	words = count_words(s, c);
-	split = malloc(words * sizeof(char *) + 1);
-	return (put_split(s, c, split));
+	split = malloc((words + 1) * sizeof(char *));
+	if (split == NULL)
+		return (NULL);
+	put_word(s, c, split);
+	return (split);
 }
 
-int main(void)
+
+/*#include <stdio.h>
+
+void	print_palavras(char **words)
 {
-	ft_split("  gabriela      de   sa     ", ' ');
+	if (!words)
+	{
+		return ;
+	}
+	while (*words != NULL)
+	{
+		printf("Palavra: %s\n", *words);
+		words++;
+	}
+	printf("\n");
 }
 
-/*
+int	main(void)
+{
+	char **words;
+	char *s1 = "   gabriela   de    sa    ";
+	words = ft_split(s1, ' ');
+	print_palavras(words);
 
-s = string para ser split
-c = caracter para ser delimitado
-
-final de array contendo null
-
-*/
+	return (0);
+}*/
