@@ -6,7 +6,7 @@
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 11:54:38 by gde-sa            #+#    #+#             */
-/*   Updated: 2023/08/08 17:58:36 by gabriela         ###   ########.fr       */
+/*   Updated: 2023/08/09 15:28:09 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,10 @@ int	count_words(char const *s, char c)
 	return (count + 1);
 }
 
-void	*rollback(char **morsels)
+void	*clear_memory(char **morsels)
 {
-	int	i;
-
-	i = -1;
-	while (morsels[++i])
-		free(morsels[i]);
+	while (*morsels)
+		free(morsels);
 	free(morsels);
 	return (NULL);
 }
@@ -59,7 +56,7 @@ char	*string_split(char const *s, int start, int len, char **split)
 
 	current_word = malloc((len + 1) * sizeof(char));
 	if (current_word == NULL)
-		return (rollback(split));
+		return (clear_memory(split));
 	index = -1;
 	while (index < len)
 		current_word[++index] = s[start++];
@@ -104,7 +101,6 @@ char	**ft_split(char const *s, char c)
 	put_word(s, c, split);
 	return (split);
 }
-
 
 /*#include <stdio.h>
 

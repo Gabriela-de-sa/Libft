@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/03 12:21:38 by gde-sa            #+#    #+#             */
-/*   Updated: 2023/08/09 14:58:55 by gabriela         ###   ########.fr       */
+/*   Created: 2023/08/09 13:56:51 by gabriela          #+#    #+#             */
+/*   Updated: 2023/08/09 14:46:08 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+void	ft_putnbr_fd(int n, int fd)
 {
-	unsigned char	*ptr1;
-	unsigned char	*ptr2;
-	size_t			i;
+	unsigned int	number;
 
-	i = 0;
-	ptr1 = (unsigned char *)s1;
-	ptr2 = (unsigned char *)s2;
-	while (i < n)
+	number = n;
+	if (n < 0)
 	{
-		if (ptr1[i] != ptr2[i])
-			return (ptr1[i] - ptr2[i]);
-		i++;
+		ft_putchar_fd('-', fd);
+		number = n * -1;
 	}
-	return (0);
+	if (number > 9)
+	{
+		ft_putnbr_fd(number / 10, fd);
+	}
+	ft_putchar_fd(number % 10 + '0', fd);
 }
+
+/*
+TROCAR O HEADER
+
+converte um numero em string
+*/

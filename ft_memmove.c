@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gde-sa <gde-sa@student.42.fr>              +#+  +:+       +#+        */
+/*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 12:21:52 by gde-sa            #+#    #+#             */
-/*   Updated: 2023/08/03 12:25:26 by gde-sa           ###   ########.fr       */
+/*   Updated: 2023/08/09 15:03:28 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,6 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		ft_memcpy(dest, src, n);
 	return ((void *)dest);
 }
-
-/*int main(void)
-{
-	const char src[20] = "Memcpy vs Memmove";
-	char dest[20];
-	ft_memmove(dest, src, sizeof(int) * 6);
-
-}*/
 
 /*
 retorna dest

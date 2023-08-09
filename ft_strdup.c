@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gde-sa <gde-sa@student.42.fr>              +#+  +:+       +#+        */
+/*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 11:54:53 by gde-sa            #+#    #+#             */
-/*   Updated: 2023/08/07 11:54:55 by gde-sa           ###   ########.fr       */
+/*   Updated: 2023/08/09 15:11:33 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,6 @@ char	*ft_strdup(const char *s)
 /*
 strdup aloca um espaco na memoria a partir da string
 a duplicata ocorre da string inteira
+
+perguntar se tem que usar free pois fala no manual
 */

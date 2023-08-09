@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/03 12:21:38 by gde-sa            #+#    #+#             */
-/*   Updated: 2023/08/09 14:58:55 by gabriela         ###   ########.fr       */
+/*   Created: 2023/08/09 13:46:33 by gabriela          #+#    #+#             */
+/*   Updated: 2023/08/09 13:55:51 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+void	ft_putendl_fd(char *s, int fd)
 {
-	unsigned char	*ptr1;
-	unsigned char	*ptr2;
-	size_t			i;
+	int		i;
+	char	newline;
 
+	newline = '\n';
 	i = 0;
-	ptr1 = (unsigned char *)s1;
-	ptr2 = (unsigned char *)s2;
-	while (i < n)
+	while (s[i])
 	{
-		if (ptr1[i] != ptr2[i])
-			return (ptr1[i] - ptr2[i]);
+		write(fd, &s[i], 1);
 		i++;
 	}
-	return (0);
+	write(fd, &newline, 1);
 }
+
+/*
+TROCAR O HEADER
+*/

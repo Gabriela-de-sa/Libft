@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/03 12:21:38 by gde-sa            #+#    #+#             */
-/*   Updated: 2023/08/09 14:58:55 by gabriela         ###   ########.fr       */
+/*   Created: 2023/08/09 11:22:31 by gabriela          #+#    #+#             */
+/*   Updated: 2023/08/09 13:46:24 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+void	ft_putstr_fd(char *s, int fd)
 {
-	unsigned char	*ptr1;
-	unsigned char	*ptr2;
-	size_t			i;
+	int	i;
 
 	i = 0;
-	ptr1 = (unsigned char *)s1;
-	ptr2 = (unsigned char *)s2;
-	while (i < n)
+	while (s[i])
 	{
-		if (ptr1[i] != ptr2[i])
-			return (ptr1[i] - ptr2[i]);
-		i++;
+		write(fd, &s[i], 1);
+		s++;
 	}
-	return (0);
 }
+
+/*
+TROCAR O HEADER
+
+é passado uma string e tem que iterar sobre cada caracter
+*/
