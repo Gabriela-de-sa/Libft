@@ -1,5 +1,5 @@
 NAME = libft.a
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -I .
 
 FILE = \
 	ft_bzero.c\
@@ -39,17 +39,25 @@ FILE = \
 
 OBJECTS = $(FILE:%.c=%.o)
 
+FILE_BONUS = \
+	ft_lstnew.c\
+
+BONUS_OBJECTS = $(FILE_BONUS:%.c=%.o)
+
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
-	@ar rcs $(NAME) $(OBJECTS)
+	@ar rcs $(NAME) $(OBJECTS) -I .
+
+bonus: $(BONUS_OBJECTS)
+	@ar rcs $(NAME) $(BONUS_OBJECTS) -I .
 
 clean:
-	@rm -rf $(OBJECTS)
+	@rm -rf $(OBJECTS) $(BONUS_OBJECTS)
 
 fclean: clean
 	@rm -rf $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus

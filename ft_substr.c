@@ -6,7 +6,7 @@
 /*   By: gde-sa <gde-sa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 11:55:22 by gde-sa            #+#    #+#             */
-/*   Updated: 2023/08/07 11:55:28 by gde-sa           ###   ########.fr       */
+/*   Updated: 2023/08/10 16:36:04 by gde-sa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,8 @@ if (start >= length_s)
 	que a substring vai ser somente um /0
 
 i é a posicao do index 0 da substring
+
+if (len >= len_s)
+	len = len_s - start;
 
 */

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gde-sa <gde-sa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 11:56:14 by gde-sa            #+#    #+#             */
-/*   Updated: 2023/08/09 20:01:51 by gabriela         ###   ########.fr       */
+/*   Updated: 2023/08/10 16:05:58 by gde-sa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,6 @@ void			ft_putstr_fd(char *s, int fd);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
 char			*ft_itoa(int n);
+t_list			*ft_lstnew(void *content);
 
 #endif
