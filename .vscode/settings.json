@@ -3,6 +3,7 @@
         "string": "c",
         "string_view": "c",
         "functional": "c",
-        "limits": "c"
+        "limits": "c",
+        "algorithm": "c"
     }
 }

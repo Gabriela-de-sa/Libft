@@ -6,7 +6,7 @@
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 11:54:38 by gde-sa            #+#    #+#             */
-/*   Updated: 2023/08/09 15:28:09 by gabriela         ###   ########.fr       */
+/*   Updated: 2023/08/09 21:49:09 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	count_words(char const *s, char c)
 {
-	int	count;
-	int	i;
+	int		count;
+	int		i;
 
 	count = 0;
 	if (*s == '\0')
@@ -41,22 +41,21 @@ int	count_words(char const *s, char c)
 	return (count + 1);
 }
 
-void	*clear_memory(char **morsels)
+void	*clear_memory(char *morsels)
 {
 	while (*morsels)
 		free(morsels);
-	free(morsels);
 	return (NULL);
 }
 
-char	*string_split(char const *s, int start, int len, char **split)
+char	*string_split(char const *s, int start, int len)
 {
-	char	*current_word;
-	int		index;
+	char			*current_word;
+	int				index;
 
 	current_word = malloc((len + 1) * sizeof(char));
 	if (current_word == NULL)
-		return (clear_memory(split));
+		return (clear_memory(current_word));
 	index = -1;
 	while (index < len)
 		current_word[++index] = s[start++];
@@ -82,7 +81,7 @@ char	**put_word(char const *s, char c, char **split)
 			i = i - 1;
 			while (s[++i] && s[i] != c)
 				len++;
-			split[++split_index] = string_split(s, start, len, split);
+			split[++split_index] = string_split(s, start, len);
 		}
 	}
 	split[split_index + 1] = NULL;
