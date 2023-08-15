@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gde-sa <gde-sa@student.42.fr>              +#+  +:+       +#+        */
+/*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 12:23:51 by gde-sa            #+#    #+#             */
-/*   Updated: 2023/08/03 12:23:54 by gde-sa           ###   ########.fr       */
+/*   Updated: 2023/08/14 14:18:28 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,23 +36,3 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (NULL);
 }
-
-/*int	main(void)
-{
-	ft_strnstr("lorem ipsum dolor sit amet", "ipsum", 15);
-}*/
-
-/*
-i = big
-j = little
-
-big = gabriela
-
-little = ela
-
-se little for null retorna big
-
-se little nao for vazia mas, nao estiver em big vai retornar null
-
-se little estiver em big sera retornado um ponteiro para o primeira pos de little
-*/

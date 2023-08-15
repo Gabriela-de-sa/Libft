@@ -6,7 +6,7 @@
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 18:38:24 by gabriela          #+#    #+#             */
-/*   Updated: 2023/08/08 20:11:01 by gabriela         ###   ########.fr       */
+/*   Updated: 2023/08/14 14:17:01 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,3 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 		i++;
 	}
 }
-
-/*
-o endereco de cada caracter
-
-trocar o header
-*/

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gde-sa <gde-sa@student.42.fr>              +#+  +:+       +#+        */
+/*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 12:23:20 by gde-sa            #+#    #+#             */
-/*   Updated: 2023/08/03 12:23:23 by gde-sa           ###   ########.fr       */
+/*   Updated: 2023/08/14 14:16:28 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,3 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return (s);
 }
-
-/*
-coloca o caracter c no comeco da string determinado pelo valor dado a n
-uso do unsigned char é para ter mais consistencia no uso de memoria
-*/

@@ -6,7 +6,7 @@
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 18:14:29 by gabriela          #+#    #+#             */
-/*   Updated: 2023/08/08 18:38:13 by gabriela         ###   ########.fr       */
+/*   Updated: 2023/08/14 14:18:16 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	new_string[i] = '\0';
 	return (new_string);
 }
-
-/*
-iterar sobre cada caracter de s e chamar a funcao f
-
-TROCAR O HEADER
-*/

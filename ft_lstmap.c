@@ -1,39 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/07 11:55:22 by gde-sa            #+#    #+#             */
-/*   Updated: 2023/08/14 14:18:42 by gabriela         ###   ########.fr       */
+/*   Created: 2023/08/13 00:15:45 by gabriela          #+#    #+#             */
+/*   Updated: 2023/08/14 14:02:56 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	char	*substring;
-	size_t	len_s;
-	size_t	i;
+	t_list	*new_list;
+	t_list	*elem;
 
-	len_s = ft_strlen(s);
-	if (start >= len_s)
-		return (ft_strdup(""));
-	if (s == 0)
+	if (lst == NULL)
 		return (NULL);
-	if (len >= len_s)
-		len = len_s - start;
-	substring = (char *) malloc(len + 1);
-	if (substring == NULL)
-		return (NULL);
-	i = 0;
-	while (s[i] && i < len)
+	elem = ft_lstnew((*f)(lst->content));
+	if (elem == NULL)
 	{
-		substring[i] = s[i + start];
-		i++;
+		free(elem);
+		return (NULL);
 	}
-	substring[i] = '\0';
-	return (substring);
+	new_list = elem;
+	lst = lst->next;
+	while (lst != NULL)
+	{
+		elem->next = ft_lstnew((*f)(lst->content));
+		if (elem == NULL)
+		{
+			ft_lstclear(&elem, del);
+			return (NULL);
+		}
+		elem = elem->next;
+		lst = lst->next;
+	}
+	return (new_list);
 }

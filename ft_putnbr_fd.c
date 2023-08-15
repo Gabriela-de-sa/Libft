@@ -6,7 +6,7 @@
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 13:56:51 by gabriela          #+#    #+#             */
-/*   Updated: 2023/08/09 14:46:08 by gabriela         ###   ########.fr       */
+/*   Updated: 2023/08/14 14:16:40 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,3 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	ft_putchar_fd(number % 10 + '0', fd);
 }
-
-/*
-TROCAR O HEADER
-
-converte um numero em string
-*/

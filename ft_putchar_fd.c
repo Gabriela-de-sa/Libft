@@ -6,7 +6,7 @@
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 20:11:06 by gabriela          #+#    #+#             */
-/*   Updated: 2023/08/09 11:20:10 by gabriela         ###   ########.fr       */
+/*   Updated: 2023/08/14 14:16:32 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,3 @@ void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }
-
-/*
-trocar o header
-*/

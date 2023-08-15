@@ -6,7 +6,7 @@
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 13:46:33 by gabriela          #+#    #+#             */
-/*   Updated: 2023/08/09 13:55:51 by gabriela         ###   ########.fr       */
+/*   Updated: 2023/08/14 14:16:35 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,3 @@ void	ft_putendl_fd(char *s, int fd)
 	}
 	write(fd, &newline, 1);
 }
-
-/*
-TROCAR O HEADER
-*/

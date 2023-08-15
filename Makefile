@@ -1,5 +1,6 @@
 NAME = libft.a
-CFLAGS = -Wall -Wextra -Werror -I .
+CFLAGS = -Wall -Wextra -Werror -I ./
+CC = cc
 
 FILE = \
 	ft_bzero.c\
@@ -41,16 +42,24 @@ OBJECTS = $(FILE:%.c=%.o)
 
 FILE_BONUS = \
 	ft_lstnew.c\
+	ft_lstadd_front.c\
+	ft_lstsize.c\
+	ft_lstlast.c\
+	ft_lstadd_back.c\
+	ft_lstdelone.c\
+	ft_lstclear.c\
+	ft_lstiter.c\
+	ft_lstmap.c\
 
 BONUS_OBJECTS = $(FILE_BONUS:%.c=%.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
-	@ar rcs $(NAME) $(OBJECTS) -I .
+	@ar rcs $(NAME) $(OBJECTS)
 
 bonus: $(BONUS_OBJECTS)
-	@ar rcs $(NAME) $(BONUS_OBJECTS) -I .
+	@ar rcs $(NAME) $(BONUS_OBJECTS)
 
 clean:
 	@rm -rf $(OBJECTS) $(BONUS_OBJECTS)

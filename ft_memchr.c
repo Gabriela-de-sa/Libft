@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gde-sa <gde-sa@student.42.fr>              +#+  +:+       +#+        */
+/*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 12:21:08 by gde-sa            #+#    #+#             */
-/*   Updated: 2023/08/03 12:21:12 by gde-sa           ###   ########.fr       */
+/*   Updated: 2023/08/14 14:16:12 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,3 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
-
-// TROCAR HEADER DA 42
-
-/*
-procura a primeira ocorrência do caractere c (um unsigned char)
- nos primeiros n bytes da string apontada pelo argumento str .
-*/
