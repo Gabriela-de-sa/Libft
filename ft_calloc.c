@@ -6,7 +6,7 @@
 /*   By: gde-sa <gde-sa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 15:38:58 by gde-sa            #+#    #+#             */
-/*   Updated: 2023/08/03 17:30:45 by gde-sa           ###   ########.fr       */
+/*   Updated: 2023/08/17 13:18:56 by gde-sa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,14 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
+	size_t	total_size;
 	char	*ptr;
 
-	if (nmemb == 0 || size == 0)
+	total_size = nmemb * size;
+	if (nmemb <= 0 || size <= 0)
 		return (malloc(0));
+	if (total_size / size != nmemb)
+		return (NULL);
 	ptr = malloc(nmemb * size);
 	if (ptr == NULL)
 		return (NULL);

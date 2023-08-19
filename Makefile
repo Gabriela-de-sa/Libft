@@ -56,10 +56,10 @@ BONUS_OBJECTS = $(FILE_BONUS:%.c=%.o)
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
-	@ar rcs $(NAME) $(OBJECTS)
+	@ar rcs $(NAME) $?
 
-bonus: $(BONUS_OBJECTS)
-	@ar rcs $(NAME) $(BONUS_OBJECTS)
+bonus: 
+	@make OBJECTS="$(BONUS_OBJECTS)"
 
 clean:
 	@rm -rf $(OBJECTS) $(BONUS_OBJECTS)

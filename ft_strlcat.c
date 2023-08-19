@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gde-sa <gde-sa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 12:23:32 by gde-sa            #+#    #+#             */
-/*   Updated: 2023/08/13 21:11:10 by gabriela         ###   ########.fr       */
+/*   Updated: 2023/08/16 10:44:56 by gde-sa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		len_dst = len_src + size;
 	return (len_dst);
 }
-
-/*
-o size é o tamanho do buffer que destino tem que ter
-
-se size for maior que len de dst significa que eu tenho espaco no buffer
-no final eu tenho que ajustar o tamanho que é len de dst e src
-
-se size for menor que dst 
-
-*/

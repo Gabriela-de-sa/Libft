@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gde-sa <gde-sa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 11:54:38 by gde-sa            #+#    #+#             */
-/*   Updated: 2023/08/14 14:12:23 by gabriela         ###   ########.fr       */
+/*   Updated: 2023/08/16 16:20:42 by gde-sa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,14 @@ int	count_words(char const *s, char c)
 	return (counter);
 }
 
-void	*clear_memory(char **morsels)
+void	*clear_memory(char **peace)
 {
-	while (*morsels)
-		free(morsels);
-	free(morsels);
+	char	**tmp;
+
+	tmp = peace;
+	while (*peace)
+		free(*peace++);
+	free(tmp);
 	return (NULL);
 }
 

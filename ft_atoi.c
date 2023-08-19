@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gde-sa <gde-sa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 12:20:41 by gde-sa            #+#    #+#             */
-/*   Updated: 2023/08/13 21:23:51 by gabriela         ###   ########.fr       */
+/*   Updated: 2023/08/16 10:44:08 by gde-sa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,18 +35,3 @@ int	ft_atoi(const char *nptr)
 	}
 	return (sign * result);
 }
-
-/*
-converte uma string em um numero inteiro
-se o primeiro caracter da string for um (-) é feito a multiplicacao por -1
-descartar todos os espacos em brancos 
-caracteres que tem \ na frente
-se aparecer algum desses no meio é retornado somente o numero que foi convertido
-
-retorna 0
-
-	-+   -- 000 "0" '- '  
-
-https://www.geeksforgeeks.org/write-your-own-atoi/
-
-*/
