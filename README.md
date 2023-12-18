@@ -1,12 +1,12 @@
 <h1 align="center">
 	42cursus' Libft
+</h1>
 <br>
 <div align="center">
 	<br>
   <img  height="130em"  width="15%" src="https://game.42sp.org.br/static/assets/achievements/libftm.png" />
     <br>
 </div>
-</h1>
 
 Libft (Library of Functions)
 
