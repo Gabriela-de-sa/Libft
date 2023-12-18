@@ -70,3 +70,12 @@ The bonus part of this project comprises functions for the manipulation of singl
 - [`ft_lstclear`](ft_lstclear.c)	- deletes and free list.
 - [`ft_lstiter`](ft_lstiter.c)	- applies a function to each element of a list.
 - [`ft_lstmap`](ft_lstmap.c)	- applies a function to each element of a list.
+
+## 📋 Testing
+
+You can create your own tests, always showing the returns of each flag and the number of bytes.
+
+Or you can also use this third party tester to fully test the project
+
+* [Tripouille/ft_printfTester](https://github.com/xicodomingues/francinette)
+
